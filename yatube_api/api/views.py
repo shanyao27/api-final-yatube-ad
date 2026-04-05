@@ -10,14 +10,20 @@ from .permissions import IsOwnerOrReadOnly
 from .serializers import (PostSerializer, GroupSerializer,
                           CommentSerializer, FollowSerializer)
 from posts.models import Post, Group
+from rest_framework.pagination import LimitOffsetPagination
 
+
+class PostPagination(LimitOffsetPagination):
+    default_limit = 10
+    max_limit = 100
 
 class PostViewSet(ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly)
-
+    pagination_class = PostPagination
+    
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
