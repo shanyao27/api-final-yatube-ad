@@ -1,29 +1,8 @@
-# Виртуальное окружение
 venv/
-env/
-ENV/
-
-# Кэш Python
 __pycache__/
-*.py[cod]
-*$py.class
-*.so
-
-# База данных
+*.pyc
 db.sqlite3
-*.db
-
-# Файлы IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Файлы Django
+.DS_Store
 *.log
-staticfiles/
-media/
-
-# Файлы окружения
 .env
 .venv
