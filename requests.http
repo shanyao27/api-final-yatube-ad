@@ -1,0 +1,58 @@
+# POST http://127.0.0.1:8000/api/v1/api-token-auth/
+# Content-Type: application/json
+
+# {
+#     "username": "chernikov",
+#     "password": "123"
+# }
+
+# POST http://127.0.0.1:8000/api/v1/posts/
+# Content-Type: application/json
+# Authorization: Token ec91ceed3867376b32754dc9643204e65c12022c
+
+# {
+#     "text": "Пост через API 1",
+#     "group": 1
+# }
+
+# GET http://127.0.0.1:8000/api/v1/posts/
+# Authorization: Token ec91ceed3867376b32754dc9643204e65c12022с
+
+# GET http://127.0.0.1:8000/api/v1/posts/3
+# Authorization: Token ec91ceed3867376b32754dc9643204e65c12022c
+
+# PATCH http://127.0.0.1:8000/api/v1/posts/1/
+# Content-Type: application/json
+# Authorization: Token ec91ceed3867376b32754dc9643204e65c12022c
+
+# {
+#     "text": "Обновленный текст"
+# }
+
+# GET http://127.0.0.1:8000/api/v1/posts/
+# Content-Type: application/json
+# Authorization: Token ec91ceed3867376b32754dc9643204e65c12022c
+
+# PATCH http://127.0.0.1:8000/api/v1/posts/3/
+# Content-Type: application/json
+# # Authorization: Token ec91ceed3867376b32754dc9643204e65c12022c
+
+# {
+#     "text": "new text2"
+# }
+
+# POST http://127.0.0.1:8000/api/v1/api-token-auth/
+# Content-Type: application/json
+
+# {
+#     "username": "chernikov1",
+#     "password": "screusYOLO_123"
+# }
+
+PUT http://127.0.0.1:8000/api/v1/posts/3/
+Content-Type: application/json
+Authorization: Token ec91ceed3867376b32754dc9643204e65c12022c
+
+{
+    "text": "new text5"
+}
